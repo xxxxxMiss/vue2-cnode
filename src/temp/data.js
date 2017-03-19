@@ -406,4 +406,52 @@ var allMessages = {
 }
 
 
-// e6222246-c184-4acb-8c49-daa8549773d8
+// {"success":true,"reply_id":"58ce36a528be82df1656095f"}
+// 
+// {"success":true,"reply_id":"58ce36aeede0d3f71685421d"}
+
+var myDetail = {
+    "success": true,
+    "data": {
+        "id": "58ce36944ede61bf16f863e6",
+        "author_id": "58b1510b7872ea0864fee0ce",
+        "tab": "share",
+        "content": "<div class=\"markdown-text\"><p>测试</p>\n</div>",
+        "title": "这只是一个测试的帖子 test",
+        "last_reply_at": "2017-03-19T07:43:42.076Z",
+        "good": false,
+        "top": false,
+        "reply_count": 2,
+        "visit_count": 5,
+        "create_at": "2017-03-19T07:43:16.675Z",
+        "author": {
+            "loginname": "xxxxxMiss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/17688047?v=3&s=120"
+        },
+        "replies": [
+            {
+                "id": "58ce36a528be82df1656095f",
+                "author": {
+                    "loginname": "xxxxxMiss",
+                    "avatar_url": "https://avatars.githubusercontent.com/u/17688047?v=3&s=120"
+                },
+                "content": "<div class=\"markdown-text\"><p>自己回复自己</p>\n</div>",
+                "ups": [],
+                "create_at": "2017-03-19T07:43:33.249Z",
+                "reply_id": null
+            },
+            {
+                "id": "58ce36aeede0d3f71685421d",
+                "author": {
+                    "loginname": "xxxxxMiss",
+                    "avatar_url": "https://avatars.githubusercontent.com/u/17688047?v=3&s=120"
+                },
+                "content": "<div class=\"markdown-text\"><p><a href=\"/user/xxxxxMiss\">@xxxxxMiss</a> 继续回复自己</p>\n</div>",
+                "ups": [],
+                "create_at": "2017-03-19T07:43:42.063Z",
+                "reply_id": "58ce36944ede61bf16f863e6"
+            }
+        ],
+        "is_collect": false
+    }
+}

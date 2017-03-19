@@ -31,6 +31,7 @@ git push origin ...
 ```
 
 ## 项目结构
+```
 .
 ├── README.md
 ├── build // webpack配置文件
@@ -104,6 +105,7 @@ git push origin ...
     ├── iconfont // 字体
     └── img // 图片
         └── moren.png
+```
 
 ## 结构介绍
 - 本项目采用vue2.1.10 + vuex + vue-router + superagent + pug + stylus + elementui 实现的CNode社区，每个组件对应一个同名的stylus

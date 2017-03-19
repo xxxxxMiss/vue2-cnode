@@ -36,8 +36,15 @@ export const createTopic = (context, query) => {
 }
 
 // 添加评论
-export const createComment = (context, query) => {
-  return apiEntry(context, () => api.createComment(query))
+export const createComment = ({dispatch, commit}, query) => {
+  commit(types.REQUEST_START)
+  return api.createComment(query).then(({body}) => {
+    commit(types.REQUEST_SUCCESS)
+    return body
+  }, error => {
+    commit(types.REQUEST_END)
+    return error
+  })
 }
 
 
@@ -57,7 +64,6 @@ export const fetchTopics = ({dispatch, commit}, query) => {
   const { tab } = query
   return api.fetchTopics(query).then(({body: {data}}) => {
     commit(types.REQUEST_SUCCESS)
-    // commit(types.FETCH_TOPICS, { data, currentTab: tab })
     return data
   }, (err) => {
     commit(types.REQUEST_END)

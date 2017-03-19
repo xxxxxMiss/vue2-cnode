@@ -135,10 +135,11 @@
         })
       }
     },
-    mounted(){
-      this.$refs.comment.forEach(item => {
-        item.$on('item-comment', this.submitComment)
-      })
+    created(){
+      this.$root.detailVm = this
+      // this.$on('reply-comment', replyObj => {
+      //   this.theme.replies.push(replyObj)
+      // })
     }
   }
 </script>

@@ -56,7 +56,36 @@
         })
       },
       submitComment(){
-        this.$emit('item-comment')
+        if(!this.commentContent.trim()) return this.showToast({
+          msg: '评论内容不能为空',
+          position: 'center'
+        })
+        this.createComment({
+          accesstoken: this.user.accesstoken,
+          content: this.commentContent,
+          topic_id: this.topic_id, // 帖子id
+          reply_id: this.item.id // 该条评论的id
+        }).then(res => {
+          if(res.success != true) return this.showToast(res.error_msg)
+
+          // 评论成功之后立马显示评论
+          let {avatar_url, loginname} = this.user
+          let comment = {
+            id: this.topic_id,
+            author: { avatar_url, loginname },
+            create_at: new Date(),
+            content: this.commentContent,
+            ups: [],
+            reply_id: res.reply_id
+          }
+          
+          // this.$emit('reply-comment', comment)
+
+          this.$root.detailVm && this.$root.detailVm.theme.replies.push(comment)
+  
+          this.commentContent = '' // 评论成功，清除之前填写的评论内容
+          this.commentActive = false
+        })
       },
       ups(){
         this.requestAuth(() => {

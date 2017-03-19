@@ -1,0 +1,59 @@
+@import '../common/stylus/variables.stylus'
+
+.wapper
+  padding: 0 $padding-base
+  background-color: #fff
+  border-bottom: $border
+  &:last-child
+    border-bottom: 0
+  .top
+    display: flex
+    .user-info
+      display: flex
+      flex: 2
+      padding: $padding-base
+      padding-left: 0
+      img{
+        max-width: 50px
+        max-height: 50px
+        border-radius: 50%
+      }
+      .desc
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        padding-left: $padding-base
+        .text
+          padding-top: 5px
+          .publish-date
+            color: $text-lighter-color
+            padding-right: 5px
+    .action
+      flex: 1
+      text-align: right
+      padding: $padding-base
+      padding-right: 0
+      color: $text-lighter-color
+      .iconfont
+        font-size: 2rem
+      .text
+        display: inline-block
+        min-width: 22px
+        font-size: $font-size-lg
+        padding-left: 10px
+        opacity: 0
+        &.show
+          opacity: 1
+      .icon-message
+        margin-left: 20px
+  .content
+    font-size: $font-size-lg
+    padding: 5px 0
+    line-height: 1.5
+  .comment-box
+    textarea
+      textarea()
+      border: $border
+      font-size: $font-size
+    button 
+      button()

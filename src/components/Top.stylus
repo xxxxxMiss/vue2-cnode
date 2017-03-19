@@ -1,0 +1,16 @@
+@import '../common/stylus/variables.stylus'
+
+.gotop
+  opacity: 0
+  position: fixed
+  right: $padding-base
+  bottom: 65px
+  width: 40px
+  transition: opacity .5s
+  .icon-gotop
+    color: $primary-color
+    font-size: 5rem
+  &.fade-in
+    opacity: 1
+    
+

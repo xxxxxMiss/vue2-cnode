@@ -1,0 +1,31 @@
+@import '../common/stylus/variables.stylus'
+
+.footer
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #fff
+  padding: 5px 0
+  .item
+    flex: 1
+    text-align: center
+    text-decoration: none
+    color: $text-light-color
+    &.router-link-active
+      color: $primary-color
+      .icon-home:before { content: "\e6af"; }
+
+      .icon-message:before { content: "\e640"; }
+
+      .icon-publish:before { content: "\e600"; }
+
+      .icon-mine:before { content: "\e65d"; }
+    .iconfont
+      font-size: $font-size-xxxlg
+    .text
+      font-size: $font-size-sm
+      margin-top: 5px

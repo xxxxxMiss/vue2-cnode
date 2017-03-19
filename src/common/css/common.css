@@ -1,0 +1,37 @@
+*, *:after, *:before{
+  box-sizing: border-box;
+}
+  
+html,body, ul, li, p{
+  padding: 0;
+  margin: 0;
+}
+  
+html{
+  font-size: 62.5%;
+  font-family: "Helvetica Neue", "Roboto", sans-serif
+}
+
+body{
+  background-color: #ebebeb;
+}
+
+a, button, i{
+  display: inline-block;
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+li{
+  list-style: none;
+}
+
+input, button{
+  outline: 0;
+  border: 0;
+}
+  
+  

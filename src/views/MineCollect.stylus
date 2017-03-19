@@ -1,0 +1,4 @@
+@import '../common/stylus/variables.stylus'
+
+.collect-page
+  padding-top: 45px

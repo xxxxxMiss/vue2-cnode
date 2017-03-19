@@ -1,0 +1,10 @@
+@import '../common/stylus/variables.stylus'
+
+.popover-backdrop
+  position: absolute
+  top: 45px
+  right: $padding-base
+  background-color: rgba(0, 0, 0, .2)
+  .popover-wrapper
+    li
+      padding: 5px $padding-base

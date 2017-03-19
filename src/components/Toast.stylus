@@ -1,0 +1,35 @@
+@import '../common/stylus/variables.stylus'
+
+.toast
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  background-color: $primary-color
+  color: #fff
+  height: $h-header
+  line-height: $h-header
+  text-align: center
+  font-size: 1.5rem
+  &.toast-enter, &.toast-leave-to
+    top: -50px
+    opacity: 0
+  &.toast-enter-active, &.toast-leave-active
+    transition: top .5s, opacity .2s
+  &.center
+    top: 50%
+    left: 50%
+    height: auto
+    line-height: initial
+    border-radius: $border-radius
+    padding: (1.5 * $padding-base) $padding-base
+    background-color: rgba(0, 0, 0, .6)
+    transform: translate(-50%, -50%)
+    &.toast-enter, &.toast-leave-to
+      opacity: 0
+    &.toast-enter-active, &.toast-leave-active
+      transition: opacity .5s
+    
+
+
+  

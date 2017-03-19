@@ -1,0 +1,58 @@
+@import '../common/stylus/variables.stylus'
+
+.login-page
+  padding: 100px $padding-x  15px
+  background-color: #fff
+  bottom: 0
+  transform: translateZ(0)
+  &.login-enter, &.login-leave-to
+    top: 1000px
+  &.login-enter-active, &.login-leave-active
+    transition: top .3s cubic-bezier(.46,.71,.69,.55)
+  .header
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    background-color: $primary-color
+    height: $h-header
+    line-height: $h-header
+    color: #fff
+    text-align: center
+    .btn-back
+      position: absolute
+      width: 30px
+      height: $h-header
+      top: 0
+      left: 0
+      &:before
+        content: ''
+        position: absolute
+        top: 17px
+        left: $padding-base
+        width: 10px
+        height: 10px
+        border-left: 1px solid #fff
+        border-bottom: 1px solid #fff
+        transform: rotate(45deg)
+  input
+    width: 100%
+    border: 0
+    border-bottom: $border
+    height: $h-input
+    line-height: $h-input
+    padding: 0 5px
+    font-size: $font-size
+
+  button
+    border: 0
+    border-radius: $border-radius
+    text-align: center
+    width: 100%
+    margin: 30px auto
+    padding: 10px 0
+    background-color: $primary-color
+    color: #fff
+    font-size: $font-size-lg
+    font-weight: 200
+    

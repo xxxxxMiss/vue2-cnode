@@ -1,0 +1,61 @@
+$backgound-color = #eee
+$text-color = #333
+$text-light-color = #888
+$text-lighter-color = #bfbfbf
+$border-color = #ebebeb
+$primary-color = #2594e9
+
+$font-size = 1.4rem
+$font-size-sm = 1.2rem
+$font-size-lg = 1.6rem
+$font-size-xlg = 1.8rem
+$font-size-xxlg = 2rem
+$font-size-xxxlg = 2.4rem
+
+$border = 1px solid $border-color
+$border-radius = 4px
+
+$padding-base = 12px
+$padding-x = $padding-base $padding-base
+$padding-md = 15px
+
+$h-input = 42px
+$h-textarea = 134px
+$h-header = 44px
+
+//z-index
+$z-index = (tab 10) (header 20) (loading 99)
+
+
+
+// ===========mixin============
+// 头像
+avatar(size = 50px)
+  width: size
+  height: size
+  border-radius: 50%
+
+textarea()
+  width: 100%
+  padding: $padding-base
+  height: $h-textarea
+  line-height: 2rem
+  font-size: $font-size
+  resize: none
+  outline: none
+  
+button()
+  border: 0
+  border-radius: $border-radius
+  text-align: center
+  width: 100%
+  margin: 30px auto
+  padding: 10px 0
+  background-color: $primary-color
+  color: #fff
+  font-size: $font-size-xlg
+  font-weight: 200
+
+// =========function============
+get(hash, key)
+    return pair[1] if pair[0] == key for pair in hash

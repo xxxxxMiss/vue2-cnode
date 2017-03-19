@@ -1,0 +1,54 @@
+@import '../common/stylus/variables.stylus'
+
+.wapper
+  padding: 0 $padding-base
+  margin-bottom: 15px
+  background-color: #fff
+  .top
+    display: flex
+    .user-info
+      display: flex
+      flex: 2
+      padding: $padding-base
+      padding-left: 0
+      img
+        avatar()
+      .desc
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        padding-left: $padding-base
+        .text
+          padding-top: 5px
+          font-size: $font-size-sm
+          .publish-date
+            color: $text-lighter-color
+            padding-right: 5px
+          .type
+            color: $primary-color
+    .category
+      flex: 1
+      text-align: right
+      padding: $padding-base
+      padding-right: 0
+      .iconfont
+        color: $primary-color
+        font-size: 4rem
+      .icon-better
+        font-size: 3.6rem
+  .content
+    font-size: $font-size-lg
+    padding: 5px 0
+    line-height: 1.5
+  .count-info
+    display: flex
+    padding: $padding-base 0
+    .item
+      flex: 1
+      text-align: center
+      color: $text-light-color
+      .iconfont
+        vertical-align: middle
+        padding-right: 5px
+      &:not(:last-child)
+        border-right: $border

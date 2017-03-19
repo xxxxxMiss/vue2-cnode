@@ -1,0 +1,6 @@
+@import '../common/stylus/variables.stylus'
+
+.about-page
+  background-color: #fff
+  padding: $padding-base
+  padding-top: 57px

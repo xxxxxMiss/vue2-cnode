@@ -1,0 +1,29 @@
+@import '../common/stylus/variables.stylus'
+
+.message-page
+  padding-top: 45px
+  .wapper
+    padding: 0 $padding-base
+    margin-bottom: 15px
+    background-color: #fff
+    .info
+      display: flex
+      padding: $padding-base
+      .user-info
+        display: flex
+        flex: 2
+        padding-left: 0
+        img
+          avatar()
+        .desc
+          display: flex
+          flex-direction: column
+          justify-content: space-between
+          padding-left: $padding-base
+      .date
+        flex: 1
+        text-align: right
+    .content
+      font-size: $font-size-lg
+      padding: 5px 0
+      line-height: 1.5

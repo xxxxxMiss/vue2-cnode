@@ -1,0 +1,50 @@
+@import '../common/stylus/variables.stylus'
+
+.my-topic-page
+  padding-top: 45px
+  .wapper
+    padding: 0 $padding-base
+    margin-bottom: 15px
+    background-color: #fff
+    .top
+      display: flex
+      .user-info
+        display: flex
+        flex: 2
+        padding: $padding-base
+        padding-left: 0
+        img
+          avatar()
+        .desc
+          display: flex
+          flex-direction: column
+          justify-content: space-between
+          padding-left: $padding-base
+          .text
+            padding-top: 5px
+            font-size: $font-size-sm
+            .publish-date
+              color: $text-lighter-color
+              padding-right: 5px
+            .type
+              color: $primary-color
+      .category
+        flex: 1
+        text-align: right
+        padding: $padding-base
+        padding-right: 0
+        .iconfont
+          color: $primary-color
+          font-size: 4rem
+    .content
+      font-size: $font-size-lg
+      padding: 5px 0
+      line-height: 1.5
+  .no-data
+    text-align: center
+    margin-top: 150px
+    img
+      width: 80px
+    .no-data-text
+      color: $text-lighter-color
+      padding: $padding-base

@@ -1,0 +1,134 @@
+@import '../common/stylus/variables.stylus'
+
+.detail-page
+  background-color: #fff
+  bottom: 0
+  // transform: translateZ(0) fixed无效
+  &.modal-enter, &.modal-leave-to
+    top: 1000px
+  &.modal-enter-active, &.modal-leave-active
+    transition: top .2s cubic-bezier(.46,.71,.69,.55)
+  .popover-backdrop
+    position: absolute
+    z-index: 10
+    top: 0
+    right: 0
+    left: 0
+    height: 100%
+    background-color: rgba(0, 0, 0, .2)
+    .popover-wrapper
+      position: absolute
+      z-index: 20
+      top: 50px
+      right: $padding-base
+      background-color: #fff
+      border-radius: $border-radius
+      li
+        padding: 15px
+        span
+          padding-left: 10px
+      &:before
+        content: ''
+        position: absolute
+        right: 5px
+        top: -7px
+        width: 0
+        height: 0
+        border-bottom: 8px solid #fff
+        border-left: 8px solid transparent
+        border-right: 8px solid transparent
+    &.popover-enter
+      opacity: 0
+    &.popover-enter-active, &.popover-leave-active
+      transition: opacity .5s
+    &.popover-leave-to
+      opacity: 0
+  .header
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    background-color: $primary-color
+    height: $h-header
+    line-height: $h-header
+    color: #fff
+    text-align: center
+    font-size: 1.5rem
+    .btn-back
+      position: absolute
+      width: 30px
+      height: $h-header
+      top: 0
+      left: 0
+      &:before
+        content: ''
+        position: absolute
+        top: 17px
+        left: $padding-base
+        width: 10px
+        height: 10px
+        border-left: 1px solid #fff
+        border-bottom: 1px solid #fff
+        transform: rotate(45deg)
+    .more
+      position: absolute
+      right: $padding-base
+      top: 0
+      bottom: 0
+      .icon-menu
+        color: #fff
+        font-size: $font-size-xxlg
+  .detail-content
+    position: absolute
+    top: 45px
+    bottom: 0
+    width: 100%
+    overflow: hidden
+    overflow-y: auto
+    .theme-header
+      display: flex
+      padding: 0 $padding-base
+      .info
+        display: flex
+        flex: 4
+        img
+          avatar()
+        .text
+          display: flex
+          flex-direction: column
+          justify-content: space-around
+          padding-left: $padding-base
+          .name
+            color: #333
+          .publish-time
+            font-size: $font-size-sm
+            color: $text-light-color
+      .type
+        flex: 1
+        text-align: right
+        .icon-top
+          color: $primary-color
+          font-size: 4rem
+        .icon-better
+          color: $primary-color
+          font-size: 2.5rem
+    .theme-title
+      padding: $padding-base
+      font-size: $font-size-xxlg
+    .theme-content
+      padding: $padding-base
+    .theme-comment
+      border-left: 3px solid $primary-color
+      border-bottom: $border
+      border-top: $border
+      padding: $padding-x $padding-base 15px
+    .comment-box
+      padding: 0 $padding-base
+      textarea
+        textarea()
+        border: $border
+        font-size: $font-size
+        padding-left: $padding-base
+        padding-right: $padding-base
+      button 
+        button()

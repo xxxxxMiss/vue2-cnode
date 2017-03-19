@@ -1,0 +1,68 @@
+@import '../common/stylus/variables.stylus'
+
+.loading-backdrop
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: get($z-index, loading)
+  background-color: rgba(255, 255, 255, .8)
+  .load-container
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 140px;
+    height: 140px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto
+    margin-top: 250px
+    border-radius: $border-radius + 1
+    // background-color: rgba(0, 0, 0, .2)
+
+  .loading .loader:before,
+  .loading .loader:after,
+  .loading .loader {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation-fill-mode: both;
+    animation: loading 1.8s infinite ease-in-out;
+  }
+  .loading .loader {
+    margin: 1em auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    animation-delay: -0.16s;
+  }
+  .loading .loader:before {
+    left: -3.5em;
+    animation-delay: -0.32s;
+  }
+  .loading .loader:after {
+    left: 3.5em;
+  }
+  .loading .loader:before,
+  .loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+  
+  .loading .text{
+    text-align: center
+    font-size: 1.5rem
+    color: $primary-color
+    margin-top: 50px
+  }
+
+@keyframes loading {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em $primary-color;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 $primary-color;
+  }
+}

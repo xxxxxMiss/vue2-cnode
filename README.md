@@ -6,6 +6,8 @@
 [线上地址](https://xxxxxmiss.github.io/vue2-cnode/#/index)
 ## 源码地址
 [github源码]()
+## 功能预览
+![功能预览](/vue2-element-cnode.gif) 
 
 ## 环境配置
 

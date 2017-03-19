@@ -2,3 +2,11 @@
 
 .collect-page
   padding-top: 45px
+  .no-data
+    text-align: center
+    margin-top: 150px
+    img
+      width: 80px
+    .no-data-text
+      color: $text-lighter-color
+      padding: $padding-base

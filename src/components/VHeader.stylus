@@ -10,6 +10,7 @@ header
   background-color: $primary-color
   height: $h-header
   font-size: 1.5rem
+  z-index: get($z-index, header)
   .back, .content, .menu
     height: 100%
     line-height: $h-header

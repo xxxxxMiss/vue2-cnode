@@ -54,6 +54,7 @@
     color: #fff
     text-align: center
     font-size: 1.5rem
+    z-index: 50
     .btn-back
       position: absolute
       width: 30px

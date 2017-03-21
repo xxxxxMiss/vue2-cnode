@@ -2,28 +2,82 @@
 
 .message-page
   padding-top: 45px
-  .wapper
-    padding: 0 $padding-base
-    margin-bottom: 15px
-    background-color: #fff
-    .info
-      display: flex
-      padding: $padding-base
-      .user-info
-        display: flex
-        flex: 2
-        padding-left: 0
-        img
-          avatar()
-        .desc
+  .page-content
+    perspective: 1000px
+    position: absolute
+    top: 45px
+    left: 0
+    width: 100%
+    bottom: 58px
+    .container
+      transform-style: preserve-3d
+      backface-visibility: hidden
+      &.msg-enter      
+        transform: rotateY(0deg)
+      &.msg-enter-active, &.msg-leave-active
+        transition: transform .5s
+      &.msg-leave
+        transform: rotateY(0deg)
+      &.msg-leave-to, &.msg-enter-to
+        transform: rotateY(180deg)
+      .wapper
+        padding: 0 $padding-base
+        margin-bottom: 15px
+        background-color: #fff
+        .info
           display: flex
-          flex-direction: column
-          justify-content: space-between
-          padding-left: $padding-base
-      .date
-        flex: 1
-        text-align: right
-    .content
-      font-size: $font-size-lg
-      padding: 5px 0
-      line-height: 1.5
+          padding: $padding-base
+          .user-info
+            display: flex
+            flex: 2
+            padding-left: 0
+            img
+              avatar()
+            .desc
+              display: flex
+              flex-direction: column
+              justify-content: space-between
+              padding-left: $padding-base
+              line-height: 1.8
+          .date
+            flex: 1
+            text-align: right
+        .content
+          font-size: $font-size-lg
+          padding: 5px 0
+          line-height: 1.5
+      .no-data
+        text-align: center
+        margin-top: 150px
+        img
+          width: 80px
+        .no-data-text
+          color: $text-lighter-color
+          padding: $padding-base
+  .rotate-tips
+    position: fixed
+    right: 12px
+    width: 20px
+    background-color: $primary-color
+    color: #fff
+    top: 65%
+    border-radius: 10px
+    text-align: center
+    opacity: .4
+    padding: 5px 2px
+    font-size: $font-size-sm
+    .unread-msg
+      position: absolute
+      bottom: -12px
+      right: -5px
+      background-color: red
+      text-align: center
+      color: #fff
+      opacity: 1
+      padding: 3px 6px
+      border-radius: 10px
+    &.tips-enter, &.tips-leave-to
+      right: -50px
+    &.tips-enter-active, &.tips-leave-active
+      transition: right 1s
+    

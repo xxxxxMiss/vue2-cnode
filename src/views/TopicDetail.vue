@@ -62,11 +62,9 @@
     methods: {
       ...mapActions(['createComment', 'collectTopic', 'delCollect']),
       share(){
-        this.requestAuth(() => {
-          share2Weibo(location.href, 
-            document.querySelector('meta[name=description]').getAttribute('content'),
-            this.theme.author.avatar_url, '')
-        })
+        share2Weibo(location.href, 
+          document.querySelector('meta[name=description]').getAttribute('content'),
+          this.theme.author.avatar_url, '')
       },
       toggleCollect(){
         // 自己可以收藏自己的帖子

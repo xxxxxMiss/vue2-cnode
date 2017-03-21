@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-default/index.css'
 import Vue from 'vue'
 import App from './App'
 import ElementUI from 'element-ui'
+import VueTouch from 'vue-touch'
 import router from './router'
 import store from './vuex/store'
 import mixin from './mixins'
@@ -19,6 +20,7 @@ import * as filters from './filters'
 
 Vue.mixin(mixin)
 Vue.use(ElementUI)
+Vue.use(VueTouch)
 
 // 全局自定义指令
 Object.keys(directives).forEach(key => {
@@ -50,11 +52,10 @@ router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.requiresAuth)){
     if(store.state.user.accesstoken)
       next()
-    else
-      // next({
-      //   path: '/login'
-      // })
+    else{
       vm.showLoginModal()
+      vm.$root.$on('before-login-action', next)
+    }
   }else{
     next()
   }

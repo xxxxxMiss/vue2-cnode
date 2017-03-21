@@ -56,9 +56,13 @@ export default {
     dismissLoginModal(cb){
       this.$root.$children[0].loginView = null
       typeof cb === 'function' && cb()
-      // 继续执行登陆前的操作
-      this.$root.$emit('before-login-action')
-      // 登陆前的操作执行完毕，删除该操作，不然每次loginModal消失都会触发该操作
+
+      // 确保是成功登陆后关闭的login弹窗，才执行登陆前的操作
+      if(this.user.accesstoken){
+        // 继续执行登陆前的操作
+        this.$root.$emit('before-login-action')
+      }
+      // 删除登陆前的操作，不然每次loginModal消失都会触发该操作
       this.$root.$off('before-login-action')
     },
     showDetailModal(data, cb){

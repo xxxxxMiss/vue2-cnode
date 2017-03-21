@@ -50,11 +50,12 @@ const vm = new Vue({
 // 全局路由配置
 router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.requiresAuth)){
-    if(store.state.user.accesstoken)
+    if(store.state.user.accesstoken){
       next()
+    }
     else{
       vm.showLoginModal()
-      vm.$root.$on('before-login-action', next)
+      vm.$on('before-login-action', next)
     }
   }else{
     next()

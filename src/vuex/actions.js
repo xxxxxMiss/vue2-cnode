@@ -85,6 +85,16 @@ export const fetchTopicDetail = (context, query) => {
   return apiEntry(context, () => api.fetchTopicDetail(query), types.FETCH_TOPIC_DETAIL)
 }
 
+// 获取未读消息数量
+export const fetchUnreadMessage = ({dispatch, commit}, query) => {
+  return api.fetchUnreadMessage({accesstoken}).then(({body}) => body)
+}
+
+// 标记所有信息已读
+export const markAllMessagesRead = ({dispatch, commit}, query) => {
+  return api.markAllMessagesRead({accesstoken}).then(({body}) => body)
+}
+
 // 登陆
 export const validateAccesstoken = ({dispatch, commit}, user) => {
   let {accesstoken, id} = user

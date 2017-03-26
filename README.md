@@ -5,9 +5,9 @@
 ## 预览
 [线上地址](https://xxxxxmiss.github.io/vue2-cnode/#/index)
 ## 源码地址
-[github源码](https://github.com/xxxxxMiss/vue2-element-cnode)
+[github源码](https://github.com/xxxxxMiss/vue2-cnode)
 ## 功能预览
-![功能预览](/vue2-element-cnode.gif) 
+![功能预览](/vue2-cnode.gif) 
 
 ## 环境配置
 
@@ -20,9 +20,6 @@ npm run dev
 
 # 生产环境
 npm run build
-
-# 生产环境，并输出打包信息
-npm run build --report
 
 # 发布
 # 这个命令中的路径需要修改为自己的发布路径
@@ -49,6 +46,7 @@ git push origin ...
 │   │   ├── js
 │   │   └── stylus
 │   ├── components // 组件
+|   |   |—— layout // 页面布局组件
 │   │   ├── Loading.stylus
 │   │   ├── Loading.vue // loading等待层
 │   │   ├── Popover.stylus
@@ -124,6 +122,4 @@ git push origin ...
 - 最后要感谢的就是[cnode](https://cnodejs.org/)社区提供的api，让我们可以尽情的玩转社区
 
 ## 最后
-- 目前已经完成了主要的功能，还有一两个小的功能点尚未开发
 - 有待进一步优化其中的实现细节
-- 去除elementUI库。因为刚刚开始准备使用elementUI库来实现，后来发现这些页面完全可以自己手动完成，目前唯一用到了elementUI的就是首页的tab

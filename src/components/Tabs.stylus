@@ -1,0 +1,18 @@
+@import '../common/stylus/variables.stylus'
+
+.tab
+  position: relative
+  display: flex
+  text-align: center
+  background-color: #fff
+  .tab-item
+    flex: 1
+    padding: 10px
+  .tab-underline
+    position: absolute
+    z-index: 10
+    left: 0
+    height: 2px
+    background-color: $primary-color
+    transition: transform .2s
+    

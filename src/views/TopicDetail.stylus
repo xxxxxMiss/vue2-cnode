@@ -3,7 +3,6 @@
 .detail-page
   background-color: #fff
   bottom: 0
-  // transform: translateZ(0) fixed无效
   &.modal-enter, &.modal-leave-to
     top: 1000px
   &.modal-enter-active, &.modal-leave-active

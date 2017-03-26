@@ -1,17 +1,19 @@
 <template lang="pug">
-  .page.publish-page
-    v-header(v-bind:showBack="false" content="发布主题")
-    .item
-      .title 标题
-      input(placeholder="字数不得少于10个字" v-model="title")
-    .item
-      .title 所属类别
-      select(v-model="tab")
-        option(v-for="(item, index) in categorys" v-bind:value="item.key") {{item.tab}}
-    .item
-      .title 发布内容
-      textarea(placeholder="请输入发布内容" v-model="content")
-    .item: button(@click="publishTopic") 发布
+  x-page.publish-page
+    x-header
+      v-header(v-bind:showBack="false" content="发布主题")
+    x-content
+      .item
+        .title 标题
+        input(placeholder="字数不得少于10个字" v-model="title")
+      .item
+        .title 所属类别
+        select(v-model="tab")
+          option(v-for="(item, index) in categorys" v-bind:value="item.key") {{item.tab}}
+      .item
+        .title 发布内容
+        textarea(placeholder="请输入发布内容" v-model="content")
+      .item: button(@click="publishTopic") 发布
 </template>
 
 <script>

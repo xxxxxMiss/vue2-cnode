@@ -79,10 +79,8 @@
             reply_id: res.reply_id
           }
           
-          // this.$emit('reply-comment', comment)
+          this.$parent.$emit('reply-comment', comment)
 
-          this.$root.detailVm && this.$root.detailVm.theme.replies.push(comment)
-  
           this.commentContent = '' // 评论成功，清除之前填写的评论内容
           this.commentActive = false
         })

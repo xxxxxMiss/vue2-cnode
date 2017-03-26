@@ -54,17 +54,4 @@ export default {
   overflow-y: auto
   font-size: 1.4rem
   color: #333
-  
-.el-message
-  top: 0
-  left: 0
-  transform: initial
-  width: 100%
-  padding: 12px
-  & .el-message__img
-    width: 48px
-    height: 48px
-  & .el-message__group
-    margin-left: 50px
-
 </style>

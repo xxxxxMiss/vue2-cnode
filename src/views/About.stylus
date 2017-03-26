@@ -2,5 +2,6 @@
 
 .about-page
   background-color: #fff
-  padding: $padding-base
   padding-top: 57px
+  .about-content
+    padding: 0 $padding-base

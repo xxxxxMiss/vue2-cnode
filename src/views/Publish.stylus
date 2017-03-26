@@ -1,6 +1,8 @@
 @import '../common/stylus/variables.stylus'
 
 .publish-page
+  .layout-content
+    padding-top: 16px
   .item
     padding: 0 $padding-base
     .title

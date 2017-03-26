@@ -1,22 +1,20 @@
 <template lang="pug">
-  .page.index-page(ref="content" v-top="")
-    el-tabs(v-model="value")
-      el-tab-pane(label="全部" name="all") 全部
-      el-tab-pane(label="精华" name="good") 精华
-      el-tab-pane(label="分享" name="share") 分享
-      el-tab-pane(label="问答" name="ask") 问答
-      el-tab-pane(label="招聘" name="job") 招聘
-    list-item(v-for="(item, index) in topics" 
-      v-bind:item="item" v-bind:key="index" @item-click="showDetail")
-    //- top
+  x-page.index-page
+    x-header
+      tabs(v-bind:tabs="tabs" @tab-change="tabChange")
+    x-content(ref="content" v-top="")
+      list-item(v-for="(item, index) in topics" 
+        v-bind:item="item" v-bind:key="index" @item-click="showDetail")
 </template>
 
 <script>
   import Vue from 'vue'
+  import Tabs from '../components/Tabs.vue'
   import ListItem from './ListItem.vue'
   import Publish from './Publish.vue'
   import Mine from './Mine.vue'
   import { throttle } from '../common/js/util'
+  import config from '../config'
 
   import { mapActions, mapGetters } from 'vuex'
 
@@ -26,24 +24,22 @@
     name: 'index',
     data(){
       return {
+        tabs: config.tabs,
         value: 'all',
         topics: [],
         scrollH: 0,
         page: 1, // 默认从第一页开始加载
       }
     },
-    computed: mapGetters(['user']),
-    watch: {
-      value(newVal, oldVal){
-        this.topics = []
-        this.value = newVal
-        this.page = 1
-       
-       this.fetchData(newVal)
-      }
-    },
     methods: {
       ...mapActions(['fetchTopics', 'fetchTopicDetail']),
+      tabChange(newVal, newIndex){
+         this.topics = []
+         this.value = newVal
+         this.page = 1
+        
+        this.fetchData(newVal)
+      },
       fetchData(tab){
         this.fetchTopics({page: this.page, tab, limit: LIMIT}).then(data => {
           this.topics = this.topics.concat(data)
@@ -52,7 +48,7 @@
       },
       handleScroll(){
         const scroll = () => {
-          let content = this.$refs.content
+          let content = this.$refs.content.$el
           let offsetH = content.offsetHeight
           if(content.scrollTop > (this.scrollH - offsetH - scrollTheshold * offsetH)){
             this.fetchData(this.value)
@@ -70,13 +66,14 @@
       this.fetchData(this.value)
     },
     updated(){
-      this.scrollH = this.$refs.content.scrollHeight
+      this.scrollH = this.$refs.content.$el.scrollHeight
     },
     mounted(){
-      this.$refs.content.addEventListener('scroll', this.handleScroll())
+      this.$refs.content.$el.addEventListener('scroll', this.handleScroll())
     },
     components: {
-      ListItem
+      ListItem,
+      Tabs
     }
   }
 </script>

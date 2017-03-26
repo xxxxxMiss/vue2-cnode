@@ -1,8 +1,9 @@
 <template lang="pug">
-  v-touch(v-on:swipeleft="swipe" v-on:swiperight="swipe")
-    .page.message-page
-      v-header(v-bind:showBack="false" v-bind:content="headerTitle")
-      .page-content
+  v-touch(v-on:swipeleft="swipe" v-on:swiperight="swipe" v-on:tap="swipe")
+    x-page.message-page
+      x-header
+        v-header(v-bind:showBack="false" v-bind:content="headerTitle")
+      x-content.page-content
         transition(name="msg" @enter="enter" @after-leave="afterLeave")
           .container(v-show="toggleMessage")
             .wapper(v-for="item in hasReadMessages" @click="showDetail(item.topic.id)")

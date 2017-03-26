@@ -1,12 +1,14 @@
 <template lang="pug">
-  .page.collect-page
-    v-header(content="我的收藏")
-    div(v-if="collecteds.length")
-      list-item(v-for="(item, index) in collecteds" 
-        v-bind:item="item" v-bind:key="index" @item-click="showDetail")
-    .no-data(v-else)
-      img(v-bind:src="'img/nodata@2x.png' | assets")
-      .no-data-text 暂无相关数据
+  x-page.collect-page
+    x-header
+      v-header(content="我的收藏")
+    x-content
+      div(v-if="collecteds.length")
+        list-item(v-for="(item, index) in collecteds" 
+          v-bind:item="item" v-bind:key="index" @item-click="showDetail")
+      .no-data(v-else)
+        img(v-bind:src="'img/nodata@2x.png' | assets")
+        .no-data-text 暂无相关数据
 </template>
 
 <script>

@@ -3,6 +3,7 @@ import store from '../vuex/store'
 import router from '../router/index'
 
 // 可以使用webpack.base.conf.js中配置的别名来简化路径的书写
+import layout from 'components/layout/layout'
 import VHeader from 'components/VHeader.vue'
 import toast from 'components/Toast.vue'
 import loading from 'components/Loading.vue'
@@ -15,8 +16,8 @@ export default {
     return {
       loginView: null,
       topicView: null,
+      loadingView: null,
       toastView: null,
-      loadingView: null
     }
   },
   methods: {
@@ -88,6 +89,7 @@ export default {
   },
   computed: mapGetters(['user']),
   components: {
+    ...layout,
     VHeader,
     login,
     topic,

@@ -1,27 +1,13 @@
 export default {
+  // 头部tab栏
+  // '全部', '精华', '分享', '问答', '招聘'
   tabs: [
-    {
-      0: '全部',
-      tab: 'all',
-      isCurrent: true
-    }, {
-      1: '精华',
-      tab: 'good',
-      isCurrent: false
-    }, {
-      2: '分享',
-      tab: 'share',
-      isCurrent: false
-    }, {
-      3: '问答',
-      tab: 'ask',
-      isCurrent: false
-    }, {
-      4: '招聘',
-      tab: 'job',
-      isCurrent: false
-    }
-  ], // 头部tab栏
+    {key: 'all', value: '全部'},
+    {key: 'good', value: '精华'},
+    {key: 'share', value: '分享'},
+    {key: 'ask', value: '问答'},
+    {key: 'job', value: '招聘'}
+  ], 
   menus: [  // 底部的菜单栏
     {
       icon: 'home',

@@ -1,0 +1,27 @@
+@import '../../common/stylus/variables.stylus'
+
+.layout-page
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 100%
+  font-size: 1.4rem
+  color: #333
+  
+  .layout-header,
+  .layout-content,
+  .layout-footer
+    position: absolute
+    left: 0
+    width: 100%
+    
+  .layout-header
+    top: 0
+    
+  .layout-content
+    overflow: hidden
+    overflow-y: auto
+    // transform: translateZ(0)
+    
+  .layout-footer
+    bottom: 0

@@ -134,10 +134,9 @@
       }
     },
     created(){
-      this.$root.detailVm = this
-      // this.$on('reply-comment', replyObj => {
-      //   this.theme.replies.push(replyObj)
-      // })
+      this.$on('reply-comment', replyObj => {
+        this.theme.replies.push(replyObj)
+      })
     }
   }
 </script>

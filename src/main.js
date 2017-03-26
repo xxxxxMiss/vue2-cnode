@@ -5,11 +5,9 @@
 import './common/css/common.css'
 import 'github-markdown-css'
 import '../static/iconfont/iconfont.css'
-import 'element-ui/lib/theme-default/index.css'
 
 import Vue from 'vue'
 import App from './App'
-import ElementUI from 'element-ui'
 import VueTouch from 'vue-touch'
 import router from './router'
 import store from './vuex/store'
@@ -19,7 +17,6 @@ import * as filters from './filters'
 
 
 Vue.mixin(mixin)
-Vue.use(ElementUI)
 Vue.use(VueTouch)
 
 // 全局自定义指令

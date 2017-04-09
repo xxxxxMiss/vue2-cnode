@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "deploy": "rm -r ../blog/public/vue2-cnode/* && cp -r ./dist/* ../blog/public/vue2-cnode"
+    "deploy": "cp -r ./dist/* ../blog/public/vue2-cnode"
   },
   "dependencies": {
     "github-markdown-css": "^2.4.1",
